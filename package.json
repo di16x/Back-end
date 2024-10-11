@@ -1,0 +1,29 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "back end do trabalho final",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/di16x/Back-end.git"
+  },
+  "keywords": [
+    "back",
+    "end",
+    "da",
+    "aplicação"
+  ],
+  "author": "Diego Felix Tomé",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/di16x/Back-end/issues"
+  },
+  "homepage": "https://github.com/di16x/Back-end#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
