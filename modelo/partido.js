@@ -1,4 +1,4 @@
-import PessoaDAO from "./Persistencia/partidoDAO.js";
+import partidoDAO from '../persistencia/partidoDAO.js';
 
 export default class Partido{
     #nome

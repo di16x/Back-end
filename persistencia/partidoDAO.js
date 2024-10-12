@@ -1,5 +1,4 @@
 import conectar from "./conexao.js";
-import Pessoa from "../modelo/partido.js";
 import Partido from "../modelo/partido.js";
 export default class partidoDAO {
 

@@ -1,5 +1,5 @@
 import Partido from "../modelo/partido.js";
-import Pessoa from "../modelo/partido.js";
+
 
 export default class PartidoCtrl{
     

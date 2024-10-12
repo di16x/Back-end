@@ -1,5 +1,5 @@
 import express from "express";
-import rotaPessoa from "./rotaPartido.js";
+import rotaPartido from "./rotas/rotaPartido.js";
 
 const app = express();
 const host = '0.0.0.0';

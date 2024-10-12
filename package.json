@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "back end do trabalho final",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/di16x/Back-end#readme",
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3"
   }
 }

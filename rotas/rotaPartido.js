@@ -1,15 +1,15 @@
 import { Router} from "express";
-import PessoaCtrl from "../Controle/pessoa.Ctrl.js";
+import PartidoCtrl from "../controle/partido.Crtl.js";
 
-const rotaPessoa = Router();
-const ctrlPessoa = new PessoaCtrl();
+const rotaPartido= Router();
+const ctrlPartido = new PartidoCtrl();
 
-rotaPessoa.get("/", ctrlPessoa.consultar)
+rotaPartido.get("/", ctrlPartido.consultar)
 
-.get("/:termoBusca",ctrlPessoa.consultar)
-.post("/",ctrlPessoa.gravar)
-.put("/",ctrlPessoa.alterar)
-.patch("/",ctrlPessoa.alterar)
-.delete("/",ctrlPessoa.excluir);
+.get("/:termoBusca",ctrlPartido.consultar)
+.post("/",ctrlPartido.gravar)
+.put("/",ctrlPartido.alterar)
+.patch("/",ctrlPartido.alterar)
+.delete("/",ctrlPartido.excluir);
 
-export default rotaPessoa;
+export default rotaPartido;
