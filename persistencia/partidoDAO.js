@@ -9,8 +9,7 @@ export default class partidoDAO {
     async init (){
         try {
                 const conexao = await conectar();
-                const sql = `
-                CREATE TABLE IF NOT EXISTS partido(
+                const sql = `CREATE TABLE IF NOT EXISTS partido(
                     nome VARCHAR (50) NOT NULL,
                     sigla VARCHAR (5) NOT NULL,
                     num_registro VARCHAR (14) NOT NULL PRIMARY KEY);
@@ -26,11 +25,11 @@ export default class partidoDAO {
     async gravar (partido){
         if (partido instanceof Partido){
             const conexao = await conectar();
-            const sql = `INSERT INTO partido (nome,sigla,num_registro)VALUES (?,?,?,?,?);`;
+            const sql = `INSERT INTO partido (nome,sigla,num_registro)VALUES (?,?,?);`;
             const parametros = [
-                pessoa.nome,
-                pessoa.sigla,
-                pessoa.num_registro
+                partido.nome,
+                partido.sigla,
+                partido.num_registro
             ];
             await conexao.execute(sql,parametros);
             await global.poolConexoes.releaseConnection(conexao);
@@ -45,9 +44,9 @@ export default class partidoDAO {
                         sigla =?
                         WHERE num_registro =?;`;
             const parametros = [
-                pessoa.nome,
-                pessoa.sigla,
-                pessoa.num_registro
+                partido.nome,
+                partido.sigla,
+                partido.num_registro
             ];
             await conexao.execute(sql,parametros);
             await global.poolConexoes.releaseConnection(conexao);
@@ -85,7 +84,7 @@ export default class partidoDAO {
                 registro.sigla,
                 registro.num_registro
             );
-            listaPessoas.push(partido);
+            listaPartidos.push(partido);
         }
         await global.poolConexoes.releaseConnection(conexao);
         return listaPartidos;

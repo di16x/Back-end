@@ -13,7 +13,7 @@ export default class PartidoCtrl{
 
             if (nome && sigla && num_registro){
                 const partido = new Partido(nome,sigla,num_registro);
-                pessoa.incluir() .then (() => {
+                partido.incluir() .then (() => {
                     resposta.status(201).json({
                         "status": true,
                         "mensagem": "Partido cadastrado com sucesso!"
@@ -47,11 +47,11 @@ export default class PartidoCtrl{
             const dados = requisicao.body;
             const nome = dados.nome;
             const sigla = dados.sigla;
-            const cnum_registro = dados.num_registro;
+            const num_registro = dados.num_registro;
             
             if (nome && sigla && num_registro){
                 const partido = new Partido(nome,sigla,num_registro);
-                pessoa.alterar().then(()=> {
+                partido.alterar().then(()=> {
                     resposta.status(200).json({
                         "status" : true,
                         "mensagem":"Partido alterado com sucesso!"
@@ -87,7 +87,7 @@ export default class PartidoCtrl{
         
                 if (num_registro) {
                     const partido = new Partido(num_registro); 
-                    pessoa.excluir().then(() => {
+                    partido.excluir().then(() => {
                         resposta.status(200).json({
                             "status": true,
                             "mensagem": "Partido excluído com sucesso!"
@@ -126,7 +126,7 @@ export default class PartidoCtrl{
             partido.consultar(termoBusca).then((partidos) =>{
                 return resposta.status(200).json({
                     "status":true,
-                    "listaClientes": partidos
+                    "listaPartidos": partidos
                 });
             }).catch((erro) =>{
                 return resposta.status(500).json({
